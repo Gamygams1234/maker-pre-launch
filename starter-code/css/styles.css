@@ -1,0 +1,190 @@
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.padding-container {
+  padding-left: 39px;
+  padding-right: 39px;
+}
+
+.max-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+body .content {
+  min-height: 100vh;
+  background-color: #080c20;
+}
+body .content header .max-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+body .content .intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(350px, auto);
+  color: #ffffff;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+body .content .intro .mobile-background {
+  background-image: url("../assets/illustration-hero-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body .content .intro .desktop-background {
+  display: none;
+}
+body .content .intro .intro-description {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+body .content .intro .intro-description h1 {
+  font-size: 2em;
+}
+body .content .intro .intro-description h1 span {
+  color: #3ee9e5;
+}
+body .content .intro .intro-description .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .content .section-2 .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3em;
+}
+body .content .section-2 .grid .grid-item .flex-item {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
+}
+body .content .section-2 .grid .grid-item .flex-item .image {
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .content .section-2 .grid .grid-item .flex-item h4 {
+  font-size: 1.2em;
+}
+body .content .section-2 .grid .grid-item .flex-item p {
+  font-size: 1em;
+}
+body .content .section-3 .info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 575px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  body .content header .max-container {
+    justify-content: flex-start;
+  }
+  body .content .intro {
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 0;
+    grid-gap: 2em;
+  }
+  body .content .intro .desktop-background {
+    display: block;
+  }
+  body .content .intro .left-intro {
+    background-image: url("../assets/illustration-hero-left.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: auto 350px;
+  }
+  body .content .intro .right-intro {
+    background-image: url("../assets/illustration-hero-right.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: auto 350px;
+  }
+  body .content .intro .mobile-background {
+    display: none;
+  }
+  body .content .intro .intro-description h1 {
+    font-size: 2.5em;
+  }
+  body .content .intro .intro-description p {
+    font-size: 1em;
+  }
+  body .content .section-2 .grid .grid-item {
+    display: flex;
+    justify-content: flex-start;
+  }
+  body .content .section-2 .grid .grid-item .flex-item {
+    width: 90%;
+    flex-direction: row;
+    text-align: left;
+  }
+  body .content .section-2 .grid .grid-item .flex-item .image {
+    margin-bottom: 0;
+    margin-right: 3em;
+    justify-content: flex-start;
+  }
+  body .content .section-2 .grid .grid-item:nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 992px) {
+  .padding-container {
+    padding-left: 165px;
+    padding-right: 165px;
+  }
+
+  body .content .section-2 .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(350px, auto);
+  }
+  body .content .section-2 .grid .grid-item {
+    align-items: flex-start;
+  }
+  body .content .section-2 .grid .grid-item .flex-item {
+    height: 90%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  body .content .section-2 .grid .grid-item .flex-item .image {
+    width: 100%;
+    margin-bottom: 2em;
+    margin-right: 0;
+  }
+  body .content .section-2 .grid .grid-item:nth-child(even) {
+    align-items: flex-end;
+  }
+}
