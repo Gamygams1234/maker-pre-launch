@@ -105,6 +105,7 @@
               <h4 class="fw-600 mb-3">Work from anywhere</h4>
               <p class="fw-300">Selling online means not being pinned down. Want to work AND travel? Go for it!
               </p>
+
             </div>
           </div>
         </div>
@@ -120,37 +121,73 @@
           it’s completely free to get started.</p>
       </div>
     </section>
-    <section class="section-4 padding-container">
+    <section class="section-4 mb-5 padding-container">
       <div class="plans">
-        <div class="plan">
+        <div class="plan dip-toe">
+          <img src="./assets/icon-free.svg" alt="">
+          <div class="plan-description">
+            <h2 class="mb-3 fw-600">Dip your toe</h2>
+            <p class="mb-5 fw-300">Just getting started? No problem at all! Our free plan will take you a long way.</p>
+            <h2 class="price fw-600 mb-3">Free</h2>
+
+            <p class="benefit mb-2"><i class="fas fa-check"></i> Unlimited products</p>
+            <p class="benefit mb-2"><i class="fas fa-check"></i> Basic analytics</p>
+            <p class="benefit mb-2"><i class="fas fa-check"></i> Limited marketplace exposure</p>
+            <p class="benefit mb-2"><i class="fas fa-check"></i> 10% fee per transaction</p>
+          </div>
 
 
+        </div>
+        <div class="plan dive-in">
+          <img src="./assets/icon-paid.svg" alt="">
+          <div class="plan-description">
+            <h2 class="mb-3 fw-600">Dive right in</h2>
+            <p class="mb-5 fw-300"> Ready for the big time? Our paid plan will help you take your business to the next
+              level.</p>
+            <h2 class="price fw-600 mb-3"> $25.00 <span class="increment"> /month</span></h2>
+
+            <p class="benefit mb-2"><i class="fas fa-check"></i> Custom domain</p>
+            <p class="benefit mb-2"><i class="fas fa-check"></i> Advanced analytics and reports</p>
+            <p class="benefit mb-2"><i class="fas fa-check"></i> High marketplace visibility</p>
+            <p class="benefit mb-2"><i class="fas fa-check"></i> 5% fee per transaction</p>
+          </div>
         </div>
       </div>
 
     </section>
+    <div class="footer pb-5 pt-5 mb-4 padding-container">
+      <h2 class="mb-4">Get notified when we launch</h2>
+
+      <form id="email-form">
+        <div class="input">
+          <input type="text" class="form-control form mb-1" id="email" placeholder="Email Address">
+          <p class="error-msg" id="error-msg">Oops, that doesn't look like an email address.</p>
+        </div>
+        <button type="submit" class="btn btn-primary form"> Get notified</button>
+      </form>
+    </div>
 
   </div>
 
-  Dip your toe
-  Just getting started? No problem at all! Our free plan will take you a long way.
-  Free
-  Unlimited products
-  Basic analytics
-  Limited marketplace exposure
-  10% fee per transaction
+  <script>
+    const emailForm = document.getElementById("email-form");
+    const email = document.getElementById("email");
+    const errorMsg = document.getElementById("error-msg");
+    const emailTest = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    emailForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!emailTest.test(email.value)) {
+        errorMsg.style.display = "block";
+        email.classList.add("error-input")
 
-  Dive right in
-  Ready for the big time? Our paid plan will help you take your business to the next level.
-  $25.00 /month
-  Custom domain
-  Advanced analytics and reports
-  High marketplace visibility
-  5% fee per transaction
+      } else {
+        errorMsg.style.display = "none";
+        email.classList.remove("error-input")
+        alert("Success")
+      }
+    })
+  </script>
 
-  Get notified when we launch
-  Email address
-  Get notified
 </body>
 
 </html>

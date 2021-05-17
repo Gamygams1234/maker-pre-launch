@@ -21,14 +21,42 @@ $error: #ff2965;
     padding-left: 39px;
     padding-right: 39px;
 }
+.form {
+    border-radius: 2em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+}
 
 .max-container {
     max-width: 1440px;
     margin: 0 auto;
 }
+.error-msg {
+    color: $error;
+    display: none;
+}
+
+.btn-primary {
+    background-color: $cyan;
+    color: $extraDarkNavy;
+    border: 1px transparent solid;
+}
+.btn-primary:hover {
+    background-color: $extraDarkNavy;
+    color: $white;
+    border: 1px $cyan solid;
+}
+.btn-primary:focus {
+    background-color: $extraDarkNavy;
+    color: $white;
+    border: 1px $cyan solid;
+}
 
 body {
     font-family: "Manrope", sans-serif;
+
+    background-color: #080c20;
+
     .content {
         min-height: 100vh;
 
@@ -120,6 +148,92 @@ body {
                 line-height: 1.5;
             }
         }
+
+        .section-4 {
+            max-width: 500px;
+            margin: 0 auto;
+            .plans {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-gap: 2em;
+
+                .plan {
+                    padding: 3em 2em;
+                    position: relative;
+                    border-radius: 0.5em;
+                    img {
+                        position: absolute;
+                        top: -1.5em;
+                    }
+
+                    .plan-description {
+                        line-height: 1.5;
+                        h2 {
+                            font-size: 1.4em;
+                        }
+                        .price {
+                            font-size: 2.3em;
+                            display: flex;
+                            align-items: center;
+                            text-align: center;
+                            .increment {
+                                font-size: 1rem;
+                            }
+                        }
+                        .benefit {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            i {
+                                margin-right: 1em;
+                            }
+                        }
+                    }
+                }
+                .dip-toe {
+                    color: white;
+                    background-color: $darkBlue;
+                    .plan-description {
+                        .benefit {
+                            i {
+                                color: $cyan;
+                            }
+                        }
+                    }
+                }
+                .dive-in {
+                    color: $extraDarkNavy;
+                    background-color: $cyan;
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(../assets/bg-footer-squiggle.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: $white;
+            h2 {
+                text-align: center;
+            }
+
+            form {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-gap: 16px;
+                width: 100%;
+                input {
+                    background-color: $darkBlue;
+                    color: $grey;
+                    border: 1px transparent solid;
+                }
+                .error-input {
+                    border: 1px $error solid;
+                }
+            }
+        }
     }
 }
 
@@ -184,6 +298,14 @@ body {
                     }
                 }
             }
+            .footer {
+                form {
+                    max-width: 700px;
+                    margin: 0 auto;
+                    grid-template-columns: 60% 40%;
+                    align-items: flex-start;
+                }
+            }
         }
     }
 }
@@ -215,6 +337,16 @@ body {
                     }
                     .grid-item:nth-child(even) {
                         align-items: flex-end;
+                    }
+                }
+            }
+            .section-4 {
+                max-width: 1400px;
+                .plans {
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+                    .dip-toe {
+                        height: 98%;
                     }
                 }
             }
